@@ -1,0 +1,151 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nacos-istio-provider
+  version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos-istio-provider
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: nacos-istio-provider
+        version: v1
+    spec:
+      containers:
+        - name: nacos-istio-provider
+          image: leis17/nacos-istio-provider:v1.0
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 8081
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos-istio-provider
+  labels:
+    app: nacos-istio-provider
+spec:
+  type: ClusterIP
+  selector:
+    app: nacos-istio-provider
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nacos-istio-comsumer-v1
+  version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos-istio-comsumer
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: nacos-istio-comsumer
+        version: v1
+    spec:
+      containers:
+        - name: nacos-istio-comsumer
+          image: leis17/nacos-istio-consumer:v1.0
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nacos-istio-comsumer-v2
+  version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos-istio-comsumer
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: nacos-istio-comsumer
+        version: v2
+    spec:
+      containers:
+        - name: nacos-istio-comsumer
+          image: leis17/nacos-istio-consumer:v1.0
+          imagePullPolicy: Always
+          env:
+          - name: console_output
+            value: "hi,i'm provider v2 ！！！ "
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 8080
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nacos-istio-comsumer-v3
+  version: v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos-istio-comsumer
+      version: v3
+  template:
+    metadata:
+      labels:
+        app: nacos-istio-comsumer
+        version: v3
+    spec:
+      containers:
+        - name: nacos-istio-comsumer
+          image: leis17/nacos-istio-consumer:v1.0
+          imagePullPolicy: Always
+          env:
+            - name: console_output
+              value: "hi,i'm provider v3 ！！！ "
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos-istio-comsumer
+  labels:
+    app: nacos-istio-comsumer
+spec:
+  type: ClusterIP
+  selector:
+    app: nacos-istio-comsumer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080

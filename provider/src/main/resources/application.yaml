@@ -12,3 +12,8 @@ spring:
 
 server:
   port: 8081
+
+
+console:
+  output: "hi,i'm provider v1 ！！！ "
+
