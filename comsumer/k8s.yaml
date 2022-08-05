@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nacos-istio-comsumer
-          image: leis17/nacos-istio-comsumer
+          image: leis17/nacos-istio-consumer
           imagePullPolicy: Always
           ports:
             - name: http
