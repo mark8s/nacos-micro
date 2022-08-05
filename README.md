@@ -2,6 +2,16 @@
 
 ## build
 
+### Env
+
+JDK: 8
+
+Maven: high 3.6
+
+Nacos: 2.10.0
+
+### Operate
+
 Input comsumer or provider directory，Execute the following command：
 
 ```aidl
