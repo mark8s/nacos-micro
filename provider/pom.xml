@@ -39,13 +39,6 @@
                 <configuration>
                     <mainClass>io.github.mark8s.ConsumerApplication</mainClass>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
