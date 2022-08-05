@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nacos-istio-comsumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos-istio-comsumer
+  template:
+    metadata:
+      labels:
+        app: nacos-istio-comsumer
+    spec:
+      containers:
+        - name: nacos-istio-comsumer
+          image: leis17/nacos-istio-comsumer
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nacos-istio-comsumer
+  labels:
+    app: nacos-istio-comsumer
+spec:
+  type: ClusterIP
+  selector:
+    app: nacos-istio-comsumer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+
+
+
+
+

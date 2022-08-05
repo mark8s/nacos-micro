@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: mesh-server
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 10.10.13.48:8848
+
+        group: test
+
+server:
+  port: 8081
