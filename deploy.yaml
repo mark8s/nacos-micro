@@ -24,6 +24,8 @@ spec:
           env:
             - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
               value: http://nacos:8848
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
+              value: v1
           ports:
             - name: http
               protocol: TCP
@@ -59,6 +61,8 @@ spec:
               value: "hi,i'm provider v2 ！！！ "
             - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
               value: http://nacos:8848
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
+              value: v2
           ports:
             - name: http
               protocol: TCP
@@ -93,7 +97,9 @@ spec:
             - name: console_output
               value: "hi,i'm provider v3 ！！！ "
             - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
-                value: http://nacos:8848
+              value: http://nacos:8848
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
+                value: v3
           ports:
             - name: http
               protocol: TCP
@@ -146,6 +152,8 @@ spec:
           env:
             - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
               value: http://nacos:8848
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
+                value: v1
           ports:
             - name: http
               protocol: TCP

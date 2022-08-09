@@ -8,6 +8,8 @@ spring:
       discovery:
         server-addr: 10.10.13.48:8848
         group: test
+        metadata:
+          version: v1
 
 server:
   port: 8080
