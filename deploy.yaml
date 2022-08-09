@@ -21,6 +21,9 @@ spec:
         - name: nacos-istio-provider
           image: leis17/nacos-istio-provider:v1.0
           imagePullPolicy: Always
+          env:
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
+              value: http://nacos:8848
           ports:
             - name: http
               protocol: TCP
@@ -54,6 +57,8 @@ spec:
           env:
             - name: console_output
               value: "hi,i'm provider v2 ！！！ "
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
+              value: http://nacos:8848
           ports:
             - name: http
               protocol: TCP
@@ -87,6 +92,8 @@ spec:
           env:
             - name: console_output
               value: "hi,i'm provider v3 ！！！ "
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
+                value: http://nacos:8848
           ports:
             - name: http
               protocol: TCP
@@ -101,7 +108,7 @@ metadata:
   labels:
     app: nacos-istio-provider
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: nacos-istio-provider
   ports:
@@ -109,6 +116,7 @@ spec:
       protocol: TCP
       port: 8081
       targetPort: 8081
+      nodePort: 30203
 
 ---
 
@@ -135,6 +143,9 @@ spec:
         - name: nacos-istio-comsumer
           image: leis17/nacos-istio-consumer:v1.0
           imagePullPolicy: Always
+          env:
+            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
+              value: http://nacos:8848
           ports:
             - name: http
               protocol: TCP
@@ -157,3 +168,23 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
+
+---
+
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: nacos
+spec:
+  endpoints:
+    - address: 10.10.13.48
+      ports:
+        http-8848: 8848
+  hosts:
+    - nacos
+  location: MESH_EXTERNAL
+  ports:
+    - name: http-8848
+      number: 8848
+      protocol: TCP
+  resolution: STATIC
