@@ -20,12 +20,9 @@ public class RestClientController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${address}")
-    String address;
-
     @GetMapping("/version")
     public String client() {
 
-        return restTemplate.getForObject("http://"+address+"/server/info", String.class);
+        return restTemplate.getForObject("http://mesh-server/server/info", String.class);
     }
 }
