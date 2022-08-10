@@ -99,7 +99,7 @@ spec:
             - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
               value: http://nacos:8848
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
-                value: v3
+              value: v3
           ports:
             - name: http
               protocol: TCP
@@ -153,7 +153,7 @@ spec:
             - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
               value: http://nacos:8848
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
-                value: v1
+              value: v1
           ports:
             - name: http
               protocol: TCP
@@ -168,7 +168,7 @@ metadata:
   labels:
     app: nacos-istio-comsumer
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: nacos-istio-comsumer
   ports:
@@ -176,7 +176,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-
+      nodePort: 30201
 ---
 
 apiVersion: networking.istio.io/v1beta1
