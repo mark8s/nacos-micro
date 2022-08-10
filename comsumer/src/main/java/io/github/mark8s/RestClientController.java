@@ -1,6 +1,7 @@
 package io.github.mark8s;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +20,12 @@ public class RestClientController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Value("${address}")
+    String address;
+
     @GetMapping("/version")
     public String client() {
 
-        return restTemplate.getForObject("http://mesh-server/server/info", String.class);
+        return restTemplate.getForObject("http://"+address+"/server/info", String.class);
     }
 }
