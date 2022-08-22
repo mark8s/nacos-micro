@@ -6,7 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: nacos.external:8849
+        server-addr: http://10.10.13.87:8848
         metadata:
           version: v1
         group: test
