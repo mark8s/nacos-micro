@@ -17,18 +17,18 @@ Input comsumer or provider directory，Execute the following command：
 ```aidl
 mvn clean package
 
-docker build -t leis17/nacos-istio-consumer:v1.0 .
+docker build -t leis17/nacos-istio-consumer:v2.0 .
 
-docker push leis17/nacos-istio-consumer:v1.0
+docker push leis17/nacos-istio-consumer:v2.0
 ```
 Or
 
 ```aidl
 mvn clean package
 
-docker build -t leis17/nacos-istio-provider:v1.0 .
+docker build -t leis17/nacos-istio-provider:v2.0 .
 
-docker push leis17/nacos-istio-provider:v1.0
+docker push leis17/nacos-istio-provider:v2.0
 ```
 
 

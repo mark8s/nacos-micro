@@ -179,20 +179,20 @@ spec:
       nodePort: 30201
 ---
 
-apiVersion: networking.istio.io/v1beta1
-kind: ServiceEntry
-metadata:
-  name: nacos
-spec:
-  endpoints:
-    - address: 10.10.13.48
-      ports:
-        http-8848: 8848
-  hosts:
-    - nacos
-  location: MESH_EXTERNAL
-  ports:
-    - name: http-8848
-      number: 8848
-      protocol: TCP
-  resolution: STATIC
+#apiVersion: networking.istio.io/v1beta1
+#kind: ServiceEntry
+#metadata:
+#  name: nacos
+#spec:
+#  endpoints:
+#    - address: 10.10.13.48
+#      ports:
+#        http-8848: 8848
+#  hosts:
+#    - nacos
+#  location: MESH_EXTERNAL
+#  ports:
+#    - name: http-8848
+#      number: 8848
+#      protocol: TCP
+#  resolution: STATIC

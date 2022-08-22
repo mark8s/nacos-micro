@@ -3,7 +3,7 @@ kind: DestinationRule
 metadata:
   name: dr
 spec:
-  host: nacos-istio-porvider.default.svc.cluster.local
+  host: mesh-server.test.public.nacos
   subsets:
     - labels:
         version: v1
@@ -23,10 +23,10 @@ metadata:
   name: dr
 spec:
   hosts:
-    - nacos-istio-provider.default.svc.cluster.local
+    - mesh-server.test.public.nacos
   http:
     - route:
         - destination:
-            host: nacos-istio-provider.default.svc.cluster.local
+            host: nacos-istio-provider
             subset: v2
           weight: 100
