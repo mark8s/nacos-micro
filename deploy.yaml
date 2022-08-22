@@ -22,8 +22,6 @@ spec:
           image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
           imagePullPolicy: Always
           env:
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
-              value: http://nacos:8848
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
               value: v1
           ports:
@@ -59,8 +57,6 @@ spec:
           env:
             - name: console_output
               value: "hi,i'm provider v2 ！！！ "
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
-              value: http://nacos:8848
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
               value: v2
           ports:
@@ -96,8 +92,6 @@ spec:
           env:
             - name: console_output
               value: "hi,i'm provider v3 ！！！ "
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
-              value: http://nacos:8848
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
               value: v3
           ports:
@@ -150,8 +144,6 @@ spec:
           image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.0
           imagePullPolicy: Always
           env:
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVERADDR
-              value: http://nacos:8848
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
               value: v1
           ports:
