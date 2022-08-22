@@ -167,7 +167,7 @@ metadata:
   name: nacos-istio-comsumer
   labels:
     app: nacos-istio-comsumer
-  spec:
+spec:
     type: NodePort
     selector:
       app: nacos-istio-comsumer
