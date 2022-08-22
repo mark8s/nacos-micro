@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nacos-istio-provider
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
           imagePullPolicy: Always
           env:
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
@@ -52,7 +52,7 @@ spec:
     spec:
       containers:
         - name: nacos-istio-provider
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
           imagePullPolicy: Always
           env:
             - name: console_output
@@ -87,7 +87,7 @@ spec:
     spec:
       containers:
         - name: nacos-istio-provider
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
           imagePullPolicy: Always
           env:
             - name: console_output
@@ -141,7 +141,7 @@ spec:
     spec:
       containers:
         - name: nacos-istio-comsumer
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.0
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.1
           imagePullPolicy: Always
           env:
             - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
