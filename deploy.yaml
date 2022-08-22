@@ -168,15 +168,15 @@ metadata:
   labels:
     app: nacos-istio-comsumer
 spec:
-    type: NodePort
-    selector:
-      app: nacos-istio-comsumer
-    ports:
-      - name: http
-        protocol: TCP
-        port: 8080
-        targetPort: 8080
-        nodePort: 30204
+  type: NodePort
+  selector:
+    app: nacos-istio-comsumer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30204
 ---
 
 #apiVersion: networking.istio.io/v1beta1
