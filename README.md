@@ -17,18 +17,18 @@ Input comsumer or provider directory，Execute the following command：
 ```aidl
 mvn clean package
 
-docker build -t leis17/nacos-istio-consumer:v2.0 .
+docker build -t registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.1 .
 
-docker push leis17/nacos-istio-consumer:v2.0
+docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.1
 ```
 Or
 
 ```aidl
 mvn clean package
 
-docker build -t leis17/nacos-istio-provider:v2.0 .
+docker build -t registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1 .
 
-docker push leis17/nacos-istio-provider:v2.0
+docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
 ```
 
 
