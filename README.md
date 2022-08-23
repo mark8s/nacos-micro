@@ -48,19 +48,21 @@ Input comsumer or provider directory，Execute the following command：
 ```aidl
 mvn clean package
 
-docker build -t registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.1 .
+docker build -t registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.0 .
 
-docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.1
+docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.0
 ```
 Or
 
 ```aidl
 mvn clean package
 
-docker build -t registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1 .
+docker build -t registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0 .
 
-docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
+docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
 ```
+
+test版本，测试 cloud服务中不指定 metadata.version 后，是否影响流量的效果。
 
 
 

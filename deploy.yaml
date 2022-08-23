@@ -19,11 +19,8 @@ spec:
     spec:
       containers:
         - name: nacos-istio-provider
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
           imagePullPolicy: Always
-          env:
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
-              value: v1
           ports:
             - name: http
               protocol: TCP
@@ -52,13 +49,11 @@ spec:
     spec:
       containers:
         - name: nacos-istio-provider
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
           imagePullPolicy: Always
           env:
             - name: console_output
               value: "hi,i'm provider v2 ！！！ "
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
-              value: v2
           ports:
             - name: http
               protocol: TCP
@@ -87,13 +82,11 @@ spec:
     spec:
       containers:
         - name: nacos-istio-provider
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.1
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.0
           imagePullPolicy: Always
           env:
             - name: console_output
               value: "hi,i'm provider v3 ！！！ "
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
-              value: v3
           ports:
             - name: http
               protocol: TCP
@@ -141,11 +134,8 @@ spec:
     spec:
       containers:
         - name: nacos-istio-comsumer
-          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.1
+          image: registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-consumer:v2.0
           imagePullPolicy: Always
-          env:
-            - name: SPRING_CLOUD_NACOS_DISCOVERY_METADATA_VERSION
-              value: v1
           ports:
             - name: http
               protocol: TCP
@@ -169,22 +159,3 @@ spec:
       port: 8080
       targetPort: 8080
       nodePort: 30204
----
-
-#apiVersion: networking.istio.io/v1beta1
-#kind: ServiceEntry
-#metadata:
-#  name: nacos
-#spec:
-#  endpoints:
-#    - address: 10.10.13.48
-#      ports:
-#        http-8848: 8848
-#  hosts:
-#    - nacos
-#  location: MESH_EXTERNAL
-#  ports:
-#    - name: http-8848
-#      number: 8848
-#      protocol: TCP
-#  resolution: STATIC
