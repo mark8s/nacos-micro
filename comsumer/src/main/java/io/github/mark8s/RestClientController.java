@@ -23,6 +23,6 @@ public class RestClientController {
     @GetMapping("/version")
     public String client() {
 
-        return restTemplate.getForObject("http://mesh-server.test.public.nacos/server/info", String.class);
+        return restTemplate.getForObject("http://mesh-server.test.public.nacos:8081/server/info", String.class);
     }
 }
