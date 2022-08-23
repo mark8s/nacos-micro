@@ -64,8 +64,7 @@ docker push registry.cn-shenzhen.aliyuncs.com/solarmesh/nacos-istio-provider:v2.
 
 test版本，测试 cloud服务中不指定 metadata.version 后，是否影响流量的效果。
 
-
-
+总结：经测试后发现， metadata.version 这是必要条件，直接影响 istio 设置 流量规则的效果。也即，每个服务必须都要有版本字段，才能做到配置流量策略。
 
 
 

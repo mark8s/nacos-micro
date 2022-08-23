@@ -7,8 +7,6 @@ spring:
     nacos:
       discovery:
         server-addr: http://10.10.13.87:8848
-        metadata:
-          version: v1
         group: test
 
 server:
